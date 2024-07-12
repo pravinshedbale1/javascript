@@ -50,3 +50,69 @@ console.log("23" - "10" - 3); //10
 5. NaN
 
 #### Rest all are truthy values in javascript
+
+### JavaScript is Backward compatible
+
+1. Old features are never removed.
+2. Not really new versions, just incremental updates.
+3. Website keep working forever
+
+### Strict Mode
+
+1. 'use strict' must be the first statement in script.
+2. We can also add strict mode for specific function or block.
+3. It also restrict us from using reserved keywords.
+
+```
+let hasDriversLicence = false;
+const passTest = true;
+
+if (passTest) hasDriverLicence = true;
+
+if (hasDriversLicence) console.log("I can drive");
+
+/*
+OUTPUT
+
+
+*/
+```
+
+```
+'use strict';ß
+let hasDriversLicence = false;
+const passTest = true;
+
+if (passTest) hasDriverLicence = true;
+
+if (hasDriversLicence) console.log("I can drive");
+
+/*
+OUTPUT
+ReferenceError: hasDriverLicence is not defined
+*/
+```
+
+### Function Declaration
+
+#### Function declarations can be called before they are defined
+
+```
+function printDetails(name, profession) {
+    console.log(`My name is ${name}, I am a ${profession}`);
+}
+
+printDetails("Pravin", "Applications Engineer");
+```
+
+### Function Expression
+
+```
+const printPerson = function () {
+    console.log(
+        "Hi I am printPerson function, I am basically a function expression"
+    );
+};
+
+printPerson();
+```
