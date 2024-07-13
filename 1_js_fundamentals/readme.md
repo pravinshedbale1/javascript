@@ -116,3 +116,11 @@ const printPerson = function () {
 
 printPerson();
 ```
+
+### Objects
+
+#### dot (.) and bracket ([]) notation to access object properties
+
+1. We can use any expression in bracket notation.
+2. in object notation we can only use property name.
+3. bracket notation is more useful when property name is being calculated from an expression.
