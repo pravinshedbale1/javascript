@@ -119,3 +119,87 @@ VariableDeclaration: {
 2. Web API's : Not part of JavaScript language but functionalities provided by browser to the engine
 3. Callback Queue : This is a data structures which contains all the callback functions that are ready to be executed.
 4. Event Loop : As the event happens callback queue picks the function from callback queue and put it into the call stack for execution.
+
+    ![alt text](image-5.png)
+
+## Execution Context and Call Stack
+
+### Execution Context
+
+-   Environment in which piece of javascript code is executed. Stores all the necessary information for some code to be executed, such as local variables or arguments passed to a function.
+-   There is a Execution context associated per function.
+
+### Global Execution Context
+
+-   Global execution context is for top level code which is not inside any function.
+-   There is only one global execution context
+-   This is default execution context created.
+
+### All Execution contexts together make call stack.
+
+### Steps
+
+1. Creation of Global Execution Context.
+2. Execution of top level code (inside GEC).
+3. Execution of functions and waiting for callback functions to arrive
+
+### What is inside execution context ?
+
+1. Variable Environment (This is created in creation phase right before execution)
+
+-   let, const and var declarations
+-   Functions
+-   arguments Object (Not available for arrow function)
+-   scope chain : consist of references to the variables that are located outside of the current function, scope chain is stored in each execution context to keep track
+-   this keyword (Not available for arrow function)
+
+    ![alt text](image-6.png)
+
+    ![alt text](image-7.png)
+
+## Scope and Scope Chain
+
+### Scope Concept
+
+1. Scoping
+
+    - How our program's variables are organized and accessed
+    - Where do variables lives ?
+    - Where can we access certain variable, and where not ?
+
+2. Lexical Scoping
+
+    - Scoping is controlled by placement of functions and blocks in the code
+
+3. Scope
+
+    - Space or environment in which certain variable is declared.
+    - Variable environment in case of functions
+    - There is global scope, block scope and function scope
+
+4. Scope of a variable
+    - Region of our code where certain variable can be accessed.
+
+### The 3 types of scope
+
+1. Global Scope
+
+    - Outside of any function or block.
+    - Variables declared in global scope are accessible everywhere.
+
+        ![alt text](image-8.png)
+
+2. Function Scope
+
+    - Variable are accessible only inside function, NOT outside.
+    - Also called local scope.
+
+        ![alt text](image-9.png)
+
+3. Block Scope (ES6)
+
+    - Variables accessed only inside block.
+    - This only applies to the let and const declared variables.
+    - Functions are also block scoped in strict mode.
+
+        ![alt text](image-10.png)
